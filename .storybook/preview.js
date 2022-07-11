@@ -1,5 +1,5 @@
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -8,14 +8,36 @@ export const parameters = {
   }
 }
 
-import React from "react"
+import React from 'react'
 
-import { addDecorator } from "@storybook/react"
-import { ThemeProvider } from "@mui/material/styles"
+import { addDecorator } from '@storybook/react'
 import { withRouter } from 'storybook-addon-react-router-v6'
+import {
+  ThemeProvider as MUIThemeProvider,
+  createTheme
+} from '@mui/material/styles'
+import { ThemeProvider } from '@emotion/react'
 
-import muiTheme from "../src/styles/theme"
-import { RecoilRoot } from "recoil"
+import {defaultThemeOptions} from '../src/styles/theme'
+import { useDarkMode } from 'storybook-dark-mode';
+import { RecoilRoot } from 'recoil'
 
-addDecorator((story) => <RecoilRoot><ThemeProvider theme={muiTheme}>{story()}</ThemeProvider></RecoilRoot>)
+
+function ThemeWrapper({children}) {
+  const actualTheme = createTheme(useDarkMode() ? defaultThemeOptions('dark') : defaultThemeOptions('light'))
+  return (
+    <MUIThemeProvider theme={actualTheme}>
+    <ThemeProvider theme={actualTheme}>{children}</ThemeProvider>
+  </MUIThemeProvider>
+  );
+}
+
+
+addDecorator((story) => (
+  <RecoilRoot>
+    <ThemeWrapper>
+      {story()}
+    </ThemeWrapper>
+  </RecoilRoot>
+))
 addDecorator(withRouter)
