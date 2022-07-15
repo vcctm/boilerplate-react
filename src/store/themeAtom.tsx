@@ -3,7 +3,7 @@ import { getStorageItem, setStorageItem } from 'utils'
 
 export type ThemeMode = 'light' | 'dark'
 
-const themeMode = getStorageItem('themeMode')
+const themeMode = getStorageItem('themeMode') ?? 'light'
 
 const localStorageEffect =
   (key: string): AtomEffect<ThemeMode> =>
