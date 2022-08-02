@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 message="$(cat $1)"
-requiredPattern="^(chore|feat|fix|remove|bump|merge) .*$"
+requiredPattern="^(chore:|feat:|fix:|remove:|bump:|merge:) .*$"
 if ! [[ $message =~ $requiredPattern ]];
 then
   echo "-"
@@ -10,9 +10,9 @@ then
   echo "-"
   echo "🚨 Wrong commit message! 😕"
   echo "The commit message must have this format:"
-  echo "<verb in imperative mood> <what was done>"
+  echo "<verb in imperative mood>: <what was done>"
   echo "Allowed verbs in imperative mood: chore, fix, remove, bump, merge"
-  echo "Example: add login button"
+  echo "Example: chore: Initial project"
   echo "-"
   echo "Your commit message was:"
   echo $message
@@ -20,4 +20,4 @@ then
   echo "For more information, check script in .husky/commit-msg"
   echo "-"
   exit 1
-finpx --no -- commitlint --edit ""
+fi
