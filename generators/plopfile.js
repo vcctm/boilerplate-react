@@ -25,6 +25,12 @@ module.exports = plop => {
                 path: '../src/components/{{pascalCase name}}/test.test.tsx',
                 templateFile: 'templates/test.tsx.hbs',
             },
+            {
+                path: '../src/components/index.ts',
+                pattern: /(\/\/ new components by plop -> don't edit this)/g,
+                template: "export * from './{{pascalCase name}}'\n$1",
+                type: 'modify',
+            },
         ],
     })
 }

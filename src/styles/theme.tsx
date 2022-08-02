@@ -49,6 +49,9 @@ export const defaultThemeOptions = (themeMode: PaletteMode): ThemeOptions => ({
         mode: themeMode,
         ...(themeMode === 'light'
             ? {
+                  common: {
+                      white: colors.grey[900],
+                  },
                   primary: {
                       main: colors.primary[500],
                   },
@@ -72,6 +75,9 @@ export const defaultThemeOptions = (themeMode: PaletteMode): ThemeOptions => ({
                   },
               }
             : {
+                  common: {
+                      white: colors.grey[50],
+                  },
                   primary: {
                       main: colors.primary[100],
                   },

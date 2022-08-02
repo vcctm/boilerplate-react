@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import DarkModeToggle from 'components/DarkModeToggle'
+import { DarkModeToggle, Logo } from 'components'
 
 export const HomePage = () => {
     return (
@@ -9,8 +9,10 @@ export const HomePage = () => {
             height={'100vh'}
             justifyContent={'center'}
             textAlign={'center'}
+            alignItems={'center'}
             flexDirection={'column'}
         >
+            <Logo />
             <Typography fontSize={'24px'} fontWeight={'bold'}>
                 React Boilerplate
             </Typography>
