@@ -13,11 +13,12 @@ export const HomePage = () => {
             flexDirection={'column'}
         >
             <Logo />
-            <Typography fontSize={'24px'} fontWeight={'bold'}>
-                React Boilerplate
+            <Typography mt={2} fontSize={'24px'}>
+                <b>REACTv18</b>: BOILERPLATE
             </Typography>
-            <Typography>
-                Typescript + MUIv5 + Framer Motion + Recoil + Storybook + Plop
+            <Typography maxWidth={300} fontWeight={'bold'} fontSize={'small'}>
+                Typescript + MUIv5 + Framer Motion + Recoil + Storybook + Plop +
+                Husky + Prettier + Eslint
             </Typography>
             <Box>
                 <DarkModeToggle />

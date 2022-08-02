@@ -12,7 +12,6 @@ export const PageRender = ({ children }: IPageRenderProps) => {
                 sx={{
                     margin: '0 auto',
                 }}
-                padding={4}
                 justifyContent={'center'}
                 gap={2}
             >
