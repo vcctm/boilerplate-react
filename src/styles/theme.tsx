@@ -1,18 +1,12 @@
-import SfProWoff2 from './fonts/regular.woff2'
 import { colors } from './colors'
 import { PaletteMode, ThemeOptions } from '@mui/material'
+import { fontsImport } from './fontsImport'
 
 export const defaultThemeOptions = (themeMode: PaletteMode): ThemeOptions => ({
     components: {
         MuiCssBaseline: {
             styleOverrides: `
-            @font-face {
-                font-family: 'SfPro';
-                font-style: normal;
-                font-display: swap;
-                font-weight: 400;
-                src: url(${SfProWoff2}) format('woff2')';
-            }
+            ${fontsImport}
             `,
         },
         MuiTypography: {

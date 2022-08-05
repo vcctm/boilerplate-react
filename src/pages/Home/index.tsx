@@ -16,7 +16,7 @@ export const HomePage = () => {
             <Typography mt={2} fontSize={'24px'}>
                 <b>REACTv18</b>: BOILERPLATE
             </Typography>
-            <Typography maxWidth={300} fontWeight={'bold'} fontSize={'small'}>
+            <Typography maxWidth={300} fontWeight={900} fontSize={'small'}>
                 Typescript + MUIv5 + Framer Motion + Recoil + Storybook + Plop +
                 Husky + Prettier + Eslint
             </Typography>
